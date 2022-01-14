@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>FizzBuzz</title>
+</head>
+<body>
+  
+    <input type="number" id="userNumber" min="1" oninput="showFizzBuzz(this.value)"/>
+    <p id="outputPara"></p>
+
+    <script>
+
+function showFizzBuzz(n){
+    if ( isNaN(n) || n<=0) {
+        alert("Please enter a number greater than 0")
+    } else {
+        let msg = []
+        for(let i=1; i<=n; i++) {
+
+        let iout;
+     /* messy, removed
+
+        if (i%5==0) {
+            if (i%3==0) {
+                iout = " FizzBuzz";
+            } else {
+            iout = " Fizz";
+            }    
+        } else if (i%3==0) {
+            iout = " Buzz";
+            } else {
+            iout = " " + i;
+            }
+    */
+let fizz = (i%5==0);
+let buzz = (i%3==0);
+
+if (fizz && buzz) {
+    iout = " FizzBuzz";
+} else if(fizz) {
+    iout = "Fizz";
+} else if (buzz) {
+    iout = " Buzz";
+} else {
+    iout = " "+ i;
+}
+     msg.push(iout);
+    }
+    document.getElementById("outputPara").innerHTML = msg
+    }    
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- display textbox-->
+    <!-- call function with text box value as parameter-->
+    <!-- showFizzBuzz(textbox.value)-->
+    <input type="number" id="userNumber" oninput="showFizzBuzz(this.value)"/>
+    <p id="outputPara"></p>
+
+    <!--Script-->
+    <script>
+//function take parameter n
+//function showFizzBuzz
+function showFizzBuzz(n){
+//for each number from 1 to n
+let msg = []
+for(let i=1; i<=n; i++) {
+//check if divisible by 5 or 3
+    // if divisible by 5 and 3 output fizzbuzz
+let iout;
+if (i%5==0) {
+    if (i%3==0) {
+        iout = " FizzBuzz";
+    } else {
+        //if divisible by 5 output fizz
+        iout = " Fizz";
+    }    
+} else if (i%3==0) {
+    //if divisible by 3 output Buzz
+    iout = " Buzz";
+} else {
+    iout = " " + i;
+}
+msg.push(iout);
+}
+//output
+document.getElementById("outputPara").innerHTML = msg
+
+}
+</script>
+
+
+
+    </script>
+
+</body>
+</html>

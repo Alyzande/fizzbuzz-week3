@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>FizzBuzz</title>
+</head>
+<body>
+  
+    <input type="number" id="userNumber" oninput="showFizzBuzz(this.value)"/>
+    <p id="outputPara"></p>
+
+    <script>
+
+function showFizzBuzz(n){
+    let msg = []
+    for(let i=1; i<=n; i++) {
+
+    let iout;
+    if (i%5==0) {
+        if (i%3==0) {
+            iout = " FizzBuzz";
+        } else {
+            iout = " Fizz";
+        }    
+    } else if (i%3==0) {
+        iout = " Buzz";
+    } else {
+        iout = " " + i;
+    }
+    msg.push(iout);
+    }
+    document.getElementById("outputPara").innerHTML = msg
+}
+</script>
+</body>
+</html>
